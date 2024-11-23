@@ -24,6 +24,7 @@ main{
     margin: auto;
     position: relative;
 }
+
 .caja__trasera{
     width: 100%;
     padding: 10px 40px;
@@ -36,7 +37,9 @@ main{
 
 .caja__trasera div{
     margin: 100px 40px;
-    color: white;
+    position: relative;
+    left: 20%;
+    color: rgb(255, 255, 255);
     transition: all 50ms;
 }
 
@@ -50,16 +53,23 @@ main{
     font-size: 26px;
 }
 
+
+
 .caja__trasera button{
-    padding: 10px 40px;
+    padding: 10px 45px;
     border: 2px solid #fff;
     background: transparent;
-    font-size: 14 px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     color: white;
     outline: none;
     transition: all 300ms;
+    position: relative;
+    right: -20px; /* Mueve el botón 20px hacia la izquierda */
+    top: 20%; /* Posiciona el botón al 50% desde arriba */
+    left: 50%; /* Posiciona el botón al 50% desde la izquierda */
+    transform: translate(-50%, -50%); /* Centra el botón respecto a su posición */
 }
 
 .caja__trasera button:hover{
