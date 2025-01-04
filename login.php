@@ -19,12 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Contraseña incorrecta";
         }
-    } 
-    // Verificar si el usuario es un profesor
-    else {
+    } else {
+        // Verificar si el usuario es un profesor
         $sql_profesor = "SELECT * FROM profesores WHERE correo = '$correo'";
         $result_profesor = $conn->query($sql_profesor);
-        
+
         if ($result_profesor->num_rows > 0) {
             $usuario = $result_profesor->fetch_assoc();
             // Verificar la contraseña utilizando password_verify()
@@ -33,17 +32,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 echo "Contraseña incorrecta";
             }
-        } 
-        // Verificar si el usuario es un administrador
-        else {
+        } else {
+            // Verificar si el usuario es un administrador
             $sql_admin = "SELECT * FROM administradores WHERE correo = '$correo'";
             $result_admin = $conn->query($sql_admin);
-            
+
             if ($result_admin->num_rows > 0) {
                 $usuario = $result_admin->fetch_assoc();
                 // Verificar la contraseña utilizando password_verify()
                 if (password_verify($contraseña, $usuario['contraseña'])) {
-                    echo "Login exitoso como Administrador";
+                    session_start();
+                    $_SESSION['admin_id'] = $usuario['id_admin']; // Guardar en sesión
+                    header("Location: adminCreacion.php"); // Redirigir al panel del administrador
+                    exit();
                 } else {
                     echo "Contraseña incorrecta";
                 }
@@ -56,4 +57,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();  // Cerrar la conexión a la base de datos
 ?>
-
