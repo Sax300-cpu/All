@@ -32,20 +32,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="assets/css/estilos2.0.css">
 </head>
 <body>
-    <h1>Bienvenido, Administrador</h1>
-    <form method="POST" action="adminCreacion.php">
-        <input type="text" name="nombre" placeholder="Nombre" required>
-        <input type="text" name="apellido" placeholder="Apellido" required>
-        <input type="email" name="correo" placeholder="Correo" required>
-        <input type="password" name="contraseña" placeholder="Contraseña" required>
-        <select name="rol" required>
-            <option value="estudiante">Estudiante</option>
-            <option value="profesor">Profesor</option>
-        </select>
-        <button type="submit">Crear Usuario</button>
-    </form>
+    <div class="Creation">
+        <h1>Bienvenido Administrador</h1>
+        <form method="POST" action="adminCreacion.php">
+            <div class="cajas">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="text" name="apellido" placeholder="Apellido" required>
+                <input type="email" name="correo" placeholder="Correo" required>
+                <input type="password" name="contraseña" placeholder="Contraseña" required>
+                <select name="rol" required>
+                    <option value="estudiante">Estudiante</option>
+                    <option value="profesor">Profesor</option>
+                </select>
+            </div>
+            <button type="submit">Crear Usuario</button>
+        </form>
+    </div>
 </body>
 </html>

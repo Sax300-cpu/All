@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(150deg,#da2801,#fcdbd4 );
+    height: 100vh;
+}
+.Creation{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+}
+
+.Creation h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.Creation form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .cajas{
+    position: relative;
+    margin: 30px 0;
+}
+
+.cajas input{
+    width: 98%;
+    padding: 0 5px;
+    height: 30px;
+    font-size: 16 px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: #a32424;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #c22e2e;
+}
+
+select {
+    width: 100%;
+    height: 40px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 5px;
+    outline: none;
+}
+
+.cajas input {
+    margin-bottom: 15px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+.Creation {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding-bottom: 20px;
+}
+
+.Creation h1 {
+    font-size: 24px;
+    color: #1f110e;
+    font-family: 'Arial', sans-serif;
+}
