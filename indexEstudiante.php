@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Inicio</title>
-    <link rel="stylesheet" href="estilosEstudiante.css">
+    <link rel="stylesheet" href="assets/css/estilosEstudiante.css">
 </head>
 <body>
     <div class="container">
