@@ -1,24 +1,25 @@
 <?php
-// Conectar a la base de datos
-include('BD.php');
+// Aqui va la conexi[on al mySQL
+$student_semester = 0; 
 
-// Actualizar contraseñas en la base de datos para estudiantes
-$sql = "SELECT id, contraseña FROM estudiantes"; // Aquí puedes cambiar 'estudiantes' a la tabla que necesites
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    while ($usuario = $result->fetch_assoc()) {
-        // Cifrar la contraseña
-        $hash_contraseña = password_hash($usuario['contraseña'], PASSWORD_BCRYPT);
-        
-        // Actualizar la contraseña en la base de datos
-        $update_sql = "UPDATE estudiantes SET contraseña = '$hash_contraseña' WHERE id = " . $usuario['id'];
-        $conn->query($update_sql);
+function renderButton($semester, $current_semester) {
+    if ($current_semester == 0 && $semester == 1) {
+        echo "<button>Matricular en Semestre $semester</button>";
+    } else if ($current_semester >= $semester) {
+        echo "<button disabled>Semestre $semester</button>";
+    } else {
+        echo "<button disabled>Semestre $semester</button>";
     }
-    echo "Contraseñas actualizadas con éxito.";
-} else {
-    echo "No se encontraron usuarios para actualizar.";
 }
-
-$conn->close();
 ?>
+
+<div>
+    <p>Estado de matrícula:</p>
+    <?php
+    for ($i = 1; $i <= 8; $i++) { 
+        renderButton($i, $student_semester);
+    }
+    ?>
+</div>
+
+
