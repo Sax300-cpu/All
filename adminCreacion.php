@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="Creation">
         <h1>Bienvenido Administrador</h1>
-        <form method="POST" action="adminCreacion.php">
+        <form method="POST" action="procesoCreacion.php">
             <div class="cajas">
                 <input type="text" name="nombre" placeholder="Nombre" required>
                 <input type="text" name="apellido" placeholder="Apellido" required>
